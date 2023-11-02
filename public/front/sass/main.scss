@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../../core/font/Lato-Black.ttf'),
+     url('../../core/font/Lato-BlackItalic.ttf'),
+     url('../../core/font/Lato-Bold.ttf'),
+     url('../../core/font/Lato-BoldItalic.ttf'),
+     url('../../core/font/Lato-Hairline.ttf'),
+     url('../../core/font/Lato-HairlineItalic.ttf'),
+     url('../../core/font/Lato-Italic.ttf'),
+     url('../../core/font/Lato-Light.ttf'),
+     url('../../core/font/Lato-LightItalic.ttf'),
+     url('../../core/font/Lato-Regular.ttf'),
+     url('../../core/font/Lato-Medium.ttf'),
+     url('../../core/font/Lato-MediumItalic.ttf');
+}
+
+@import "base/base";
+@import "base/utils";
+@import "base/base_toure";
+@import "base/base_diarra";
+@import "base/base_fanta";

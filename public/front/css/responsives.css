@@ -1,0 +1,62 @@
+   /*********responsive de la page consultation cote bouton***********/
+   @media screen and (max-width: 912px)
+   {
+      #sm_val_rej{
+        overflow: auto;
+      }
+   }
+
+
+   #example_filter .form-control {
+      /* padding-left: 25px; */
+      background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
+      background-size: 15px;
+}
+
+/* td{
+   text-align: left;
+} */
+
+
+
+/****** DEBUT CSS WORK ORDER ********/
+.wor .colorEntete{
+	color: #4D6194;
+}
+
+.wor .bgMarge{
+	background: #FFF35D;
+}
+
+.wor .bgLigneRessource{
+	background: #1C9BD8;
+}
+
+.wor .colorTexte{
+	color: #4D6194;
+}
+
+.wor .colorTableau{
+	color: #1C9BD8;
+}
+
+.wor .table{
+	/*color: #1C9BD8;*/	
+	border-color: #1C9BD8;
+   zoom: 0.7;
+
+}
+.wor .table thead th,
+.wor .table thead td, 
+.wor .table tbody td,
+.wor .table tfoot td {
+   padding-left: 0.5rem;
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+   padding-right: 0.5rem;
+}
+.wor .table tfoot{
+   background-color: darkgray;
+}
+
+/**** END CSS WORK ORDER **********************/

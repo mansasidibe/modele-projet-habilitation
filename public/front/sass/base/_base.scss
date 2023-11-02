@@ -1,0 +1,31 @@
+$font-stack: Lato;
+$couleur0: #fff;
+$couleur: #203A79CC;
+$couleur1: #1C9BD8;
+$couleur2:#203A79;
+//les bleues 
+$couleur3:#4D6194 0% 0% no-repeat padding-box;
+// les vertes
+$couleur4: #32BEA6 0% 0% no-repeat padding-box;
+// les rouges
+$couleur5:  #F06C75 0% 0% no-repeat padding-box;
+// les grises
+$couleur6: #4D6194 0% 0% no-repeat padding-box;
+//vert du proforma
+$couleur7:#56B77FCC;
+//jaune du proforma
+$couleur8:#CCB63BCC;
+//rouge du proforma
+$couleur9:#C9273A;
+//bleu du proforma
+$couleur10:#3F9BF7CC;
+//taille
+$widthBtn: 141px;
+$heightBtn: 35px;
+
+$smallWrite1:8px;
+
+body {
+    font: 100% $font-stack;
+}
+
