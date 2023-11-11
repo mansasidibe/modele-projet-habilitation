@@ -13,6 +13,7 @@ const getMenu_list = async () => {
                 }
             });
             if (response.status == 200) return response.data;
+            console.log("auth",response.data)
         } catch (error) {
             console.log(error);
         }

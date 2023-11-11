@@ -86,45 +86,45 @@
 
 <script>
 
-    function myFunction() {
-        //deconnexion user connecté
-        var cookies = document.cookie.split(";");
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i];
-            var eqPos = cookie.indexOf("=");
-            var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-        }
-        window.location.href = "/auth/login";
-    }
+    // function myFunction() {
+    //     //deconnexion user connecté
+    //     var cookies = document.cookie.split(";");
+    //     for (var i = 0; i < cookies.length; i++) {
+    //         var cookie = cookies[i];
+    //         var eqPos = cookie.indexOf("=");
+    //         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    //         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    //     }
+    //     window.location.href = "/auth/login";
+    // }
 
-    async function getUser() {
-        var token = localStorage.getItem("token");
-        const config = {
-            headers: {
-                'Accept': 'application/json',
-                'Authorization': 'Bearer ' + token
-            }
-        }
-        await this.axios
-           .get(`${getBaseURL()}api/v1/user/connexion`, config)
-            .then((response) => {
-                // console.log(response);
-                this.user = response.data;
-                // console.log(this.user);
-                // alert(this.user.data.id)
-                $(".nom").html(this.user.data.nom +" "+ this.user.data.prenom);
-                $(".email").html(this.user.data.email);
-                $(".departement").html(this.user.data.departement);
-                $(".profil").html(this.user.data.profil.libelle_fr);
+    // async function getUser() {
+    //     var token = localStorage.getItem("token");
+    //     const config = {
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Authorization': 'Bearer ' + token
+    //         }
+    //     }
+    //     await this.axios
+    //        .get(`${getBaseURL()}api/v1/user/connexion`, config)
+    //         .then((response) => {
+    //             // console.log(response);
+    //             this.user = response.data;
+    //             // console.log(this.user);
+    //             // alert(this.user.data.id)
+    //             $(".nom").html(this.user.data.nom +" "+ this.user.data.prenom);
+    //             $(".email").html(this.user.data.email);
+    //             $(".departement").html(this.user.data.departement);
+    //             $(".profil").html(this.user.data.profil.libelle_fr);
 
-            })
-            .catch((error) => {
-                console.log(error);
-                this.user = [];
-            });
-    }
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //             this.user = [];
+    //         });
+    // }
 
-    getUser();
+    // getUser();
 </script>
 @yield("script")

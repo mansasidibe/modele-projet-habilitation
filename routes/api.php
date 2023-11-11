@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Auth::routes();
 
 Route::group(['prefix' => '/permission'], function () {
     Route::get('all', [PermissionController::class, 'index']);
@@ -51,7 +50,28 @@ Route::group(['prefix' => '/action'], function () {
     Route::delete('delete_hard', [ActionController::class, 'delete_hard']);
 });
 
+
 Route::resources([
     'menu' => MenuController::class,
 ]);
 Route::get('habilitation_menu', [MenuController::class, 'habilitation_user_menus2']);
+
+
+// Route::middleware('auth:api')->get('/habilitation_menu', function () {
+//     // Utilisation de la facade Auth pour récupérer l'utilisateur actuellement authentifié
+//     $user = Auth::user();
+
+//     // Vérification si un utilisateur est authentifié
+//     if ($user) {
+//         // L'utilisateur est authentifié, vous pouvez accéder à ses propriétés
+//         $profil_id = $user->profil_id;
+//         // ... Autres opérations avec l'utilisateur ...
+
+//         // Retournez les informations de l'utilisateur dans la réponse de votre API
+//         return response()->json(['user' => $user]);
+//     } else {
+//         // Aucun utilisateur n'est authentifié
+//         // Retournez une réponse appropriée (par exemple, une erreur non autorisée)
+//         return response()->json(['error' => 'Unauthorized'], 401);
+//     }
+// });

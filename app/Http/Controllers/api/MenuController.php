@@ -5,8 +5,6 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Menu;
-use App\Models\Profil;
-use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -160,7 +158,7 @@ class MenuController extends Controller
             ->join('permissions', 'permissions.menu_id', '=', 'menus.id')
             ->where('menus.statut', 1)
             ->where('menus.typemenu', 'SIDE')
-            ->where('permissions.profil_id', Auth::user()->profil_id)
+            ->where('permissions.profil_id', optional(Auth::user())->profil_id)
             ->orderBy('position', 'ASC')
             ->get();
 
@@ -170,9 +168,10 @@ class MenuController extends Controller
             ->join('permissions', 'permissions.menu_id', '=', 'menus.id')
             ->where('menus.statut', 1)
             ->where('menus.typemenu', 'PARA')
-            ->where('permissions.profil_id', Auth::user()->profil_id)
+            ->where('permissions.profil_id', optional(Auth::user())->profil_id) // Utilisation de optional() pour éviter une erreur si Auth::user() est null
             ->orderBy('position', 'ASC')
             ->get();
+
 
         // Récupérer les sous-sous-menus pour les menus SIDE
         $subSubMenusData = DB::table('menus')
