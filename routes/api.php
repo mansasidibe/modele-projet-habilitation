@@ -51,3 +51,4 @@ Route::group(['prefix' => '/action'], function () {
 Route::resources([
     'menu' => MenuController::class,
 ]);
+Route::get('habilitation_menu', [MenuController::class, 'habilitation_user_menus2']);

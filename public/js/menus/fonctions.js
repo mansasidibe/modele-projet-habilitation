@@ -6,7 +6,7 @@ var token = localStorage.getItem("token");
 const getMenu_list = async () => {
     if (token) {
         try {
-            const response = await axios.get(getBaseURL() + 'api/v1/habilitation_menu', {
+            const response = await axios.get(getBaseURL() + 'api/habilitation_menu', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token,
