@@ -89,22 +89,8 @@
                                     {{__('langue.CST_NOTIFICATIONS')}}
                                 </li>
                                 <hr />
-                                <div id="notify" class="w-100 scroll-nav">
-                                    <p style="color: black">
-                                        <a href="javascript:void(0)" style="color: black" onClick="javascript:return affichePageToolbar(this, 'lien_1','/interface/session/principal/gestionutil/consulter_util.php');">
-                                            Gestion des utilisateurs
-                                        </a>
-                                    </p>
-                                    <p style="color: black" class="nav-link2">
-                                        <a style="color: black" href="javascript:void(0)" onClick="javascript:return affichePageToolbar(this, 'lien_1','/interface/session/principal/gestionprofilutil/modifier_profil_util.php');">
-                                            Gestion des profils utilisateurs
-                                        </a>
-                                    </p>
-                                    <p style="color: black" class="nav-link2">
-                                        <a style="color: black" href="javascript:void(0)" onClick="javascript:return affichePageToolbar(this, 'lien_1','/interface/session/principal/gestionmenu/afficher_liste_MEN.php');">
-                                            Gestion du menu
-                                        </a>
-                                    </p>
+                                <div id="notify" style="overflow: auto; height: 400px;" class="w-100 scroll-nav">
+                                    
                                 </div>
                             </div>
                         </form>
@@ -125,7 +111,7 @@
                         <!--begin::Toggle-->
                         <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
                             <div class="img-contour  mr-5">
-                                <div class="img-profil" style="background-image:url('/assets/media/users/300_21.jpg')"></div>
+                                <div class="img-profil" style="background-image:url('/assets/media/users/avatar.png')"></div>
                             </div>
                         </div>
                         <!--end::Toggle-->

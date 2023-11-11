@@ -10,7 +10,7 @@
         <!--begin::Header-->
         <div class="d-flex align-items-center mt-5 informations">
             <div class="symbol symbol-100 mr-5">
-                <div class="symbol-label" style="background-image:url('/assets/media/users/300_21.jpg'); border-radius: 50%;"></div>
+                <div class="symbol-label" style="background-image:url('/assets/media/users/avatar.png'); border-radius: 50%;"></div>
                 <i class="symbol-badge bg-success"></i>
             </div>
             <div class="d-flex flex-column">

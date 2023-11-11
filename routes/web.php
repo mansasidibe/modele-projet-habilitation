@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,7 @@ Route::post('/test_permission', [PermissionController::class, 'test_permission']
 
 Route::resources([
     'profil' => ProfilController::class,
+    'menu' => MenuController::class,
 ]);
 
 Route::get('habilitation_menu', [MenuController::class, 'habilitation_user_menus2']);

@@ -58,7 +58,7 @@ class MenuController extends Controller
         $menu->icone = $data["icone"] ? $data["icone"] : 0;
         $menu->target = $data["target"];
         $menu->menu_id = $data["menu_id"];
-        $menu->created_user = Auth::user()->id;
+        // $menu->created_user = Auth::user()->id;
         $menu->save();
 
         return response()->json([
