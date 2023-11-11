@@ -83,8 +83,12 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('APP_LANG'),
 
+    'locales' => array(
+        'en',
+        'fr'
+    ),
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
