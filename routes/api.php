@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\ProfilController;
 use App\Http\Controllers\api\MenuController;
 use App\Http\Controllers\api\ActionController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\api\ActionController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Auth::routes();
 
 Route::group(['prefix' => '/permission'], function () {
     Route::get('all', [PermissionController::class, 'index']);
