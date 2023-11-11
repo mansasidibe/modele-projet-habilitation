@@ -7,7 +7,7 @@
             <div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default">
                 <!--begin::Header Nav-->
                 <ul class="menu-nav">
-                    
+
                 </ul>
                 <!--end::Header Nav-->
             </div>
@@ -39,9 +39,21 @@
                                 </li>
                                 <hr>
                                 <span class="w-100 para scroll-nav">
-                                 <p id="menu_para" style="color: black">
-
-                                </p>
+                                @if ($menus->count())
+                                    @foreach ($menus as $menu)
+                                        @if($menu->typemenu == "PARA")
+                                            <p style="color: black">
+                                                    <a href="{{ url($menu->target) }}" style="color: black" onClick="javascript:return affichePageToolbar(this, 'lien_1','/interface/session/principal/gestionutil/consulter_util.php');">
+                                                      @if (env('APP_LANG') == 'fr')
+                                                        {{ $menu->libelle_fr }}
+                                                        @else
+                                                        {{ $menu->libelle_en }}
+                                                        @endif
+                                                    </a>
+                                                </p>
+                                        @endif
+                                    @endforeach
+                                @endif
                                 </span>
                             </div>
                         </form>
@@ -77,8 +89,22 @@
                                     {{__('langue.CST_NOTIFICATIONS')}}
                                 </li>
                                 <hr />
-                                <div id="notify" style="overflow: auto; height: 400px;" class="w-100 scroll-nav">
-                                    
+                                <div id="notify" class="w-100 scroll-nav">
+                                    <p style="color: black">
+                                        <a href="javascript:void(0)" style="color: black" onClick="javascript:return affichePageToolbar(this, 'lien_1','/interface/session/principal/gestionutil/consulter_util.php');">
+                                            Gestion des utilisateurs
+                                        </a>
+                                    </p>
+                                    <p style="color: black" class="nav-link2">
+                                        <a style="color: black" href="javascript:void(0)" onClick="javascript:return affichePageToolbar(this, 'lien_1','/interface/session/principal/gestionprofilutil/modifier_profil_util.php');">
+                                            Gestion des profils utilisateurs
+                                        </a>
+                                    </p>
+                                    <p style="color: black" class="nav-link2">
+                                        <a style="color: black" href="javascript:void(0)" onClick="javascript:return affichePageToolbar(this, 'lien_1','/interface/session/principal/gestionmenu/afficher_liste_MEN.php');">
+                                            Gestion du menu
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </form>
@@ -105,12 +131,11 @@
                         <!--end::Toggle-->
                     </div>
                     <!--end::Languages-->
-                    <span class=" font-weight-bolder font-size-base d-none d-md-inline mr-3 btn-txt-option nom">
-                        <!-- @guest
+                    <span class=" font-weight-bolder font-size-base d-none d-md-inline mr-3 btn-txt-option">
+                        @guest
                         @else
-                        {{ Auth::user()->nom }} {{ Auth::user()->prenom }}
-                        @endguest -->
-
+                        {{ Auth::user()->name }}
+                        @endguest
                     </span>
                     <span class="symbol symbol-35 symbol">
                         <span class="symbol-label font-size-h5 font-weight-bold">
