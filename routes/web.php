@@ -28,3 +28,5 @@ Route::post('/test_permission', [PermissionController::class, 'test_permission']
 Route::resources([
     'profil' => ProfilController::class,
 ]);
+
+Route::get('habilitation_menu', [MenuController::class, 'habilitation_user_menus2']);

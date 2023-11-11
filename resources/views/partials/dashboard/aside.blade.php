@@ -28,12 +28,91 @@
         <!--begin::Menu Container-->
         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
-            <ul id="list" class="menu-nav menu">
+            <ul class="menu-nav menu">
+
+            @if ($menu_simple->count())
+                @foreach ($menu_simple as $menu)
+                    @if($menu->typemenu == "SIDE")
+
+                    <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                        <a href="javascript:void(0);" style="margin-left: 17px;" class="menu-link menu-toggle">
+                            <span class="svg-icon menu-icon">
+                                <!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
+                                <i class="ICONE"></i>
+                                <!--end::Svg Icon-->
+                            </span>
+                            <span class="menu-text btn-txt-dash">
+                                @if (env('APP_LANG') == 'fr')
+                                {{ $menu->libelle_fr }}
+                                @else
+                                {{ $menu->libelle_en }}
+                                @endif
+                            </span>
+                            <i class="noti-dot"></i>
+                        </a>
+                        <div class="menu-submenu">
+                            <i class="menu-arrow"></i>
+                            <ul class="menu-subnav menu">
+                                <li class="menu-item menu-item-parent" aria-haspopup="true">
+                                    <span class="menu-link">
+                                        <span class="menu-text btn-txt-dash">Applications</span>
+                                    </span>
+                                </li>
+                                @foreach($menu->menus as $s_menu)
+                                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                    <a href="{{ url($s_menu->target) }}" class="menu-link">
+                                        <i class="menu-bullet menu-bullet-line">
+                                            <span></span>
+                                        </i>
+                                        <span class="menu-text">
+                                        @if (env('APP_LANG') == 'fr')
+                                            {{ $s_menu->libelle_fr }}
+                                            @else
+                                            {{ $s_menu->libelle_en }}
+                                        @endif </span>
+                                    </a>
+                                    <!-- <div class="menu-submenu">
+                                        <i class="menu-arrow"></i>
+                                        <ul class="menu-subnav">  -->
+
+                                        <!-- <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"> -->
+                                        <!-- <a href="javascript" class="menu-link menu-toggle">
+                                            <i class="menu-bullet menu-bullet-line">
+                                                <span></span>
+                                            </i>
+                                            <span class="menu-text"> $lib_sous_menu </span>
+                                            <i class="menu-arrow"></i>
+                                        </a> -->
+                                        <!-- <div class="menu-submenu">
+                                            <i class="menu-arrow"></i>
+                                            <ul class="menu-subnav">
+
+                                                <li class="menu-item" aria-haspopup="true">
+                                                    <a href="javascript:void(0);" class="menu-link">
+                                                        <i class="menu-bullet menu-bullet-dot">
+                                                            <span></span>
+                                                        </i>
+                                                        <span class="menu-text"> $lib_ss_menu </span>
+                                                    </a>
+                                                </li>
+
+                                        </ul> -->
+                                    <!-- </div> -->
+                                </li>
+                                @endforeach
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    @endif
+                @endforeach
+            @endif
+
 
             </ul>
             <!--end::Menu Nav-->
         </div>
-
         <!--end::Menu Container-->
     </div>
     <!--end::Aside Menu-->

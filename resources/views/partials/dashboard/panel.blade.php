@@ -14,15 +14,16 @@
                 <i class="symbol-badge bg-success"></i>
             </div>
             <div class="d-flex flex-column">
-                <a href="#" class="text-muted mt-1 btn-txt-panel nom"></a>
-                <div class="text-muted mt-1 btn-txt-panel email"></div>
-                <div class="text-muted mt-1 profil"></div>
+                @guest
+                @else
+                <a href="#" class="text-muted mt-1 btn-txt-panel">{{ Auth::user()->name }}</a>
+                <div class="text-muted mt-1 btn-txt-panel">{{ Auth::user()->profil==null?"":Auth::user()->profil->libelle_fr }}</div>
                 <div class="navi mt-2">
                     <a href="#" class="navi-item">
-                        <span class="navi-text text-muted text-hover-primary btn-txt-panel departement"></span>
+                        <span class="navi-text text-muted text-hover-primary btn-txt-panel profil"></span>
                     </a>
                 </div>
-
+                @endguest
             </div>
         </div>
         <!--end::Header-->
@@ -111,15 +112,12 @@
         <!--end::Separator-->
         <!--begin::Notifications-->
         <div>
-            <a class="btn btn-primary btn-txt btn-block account-btn " href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-            </a>
-
+            <!--begin::Item-->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary btn-txt btn-block account-btn "> {{__('langue.CST_DECONNEXION')}} </a>
+            <!--end::Item   font-weight-bolder py-2 px-5 w-12-->
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
-            <!-- <a href="javascript:void(0);" onClick="myFunction()" class="btn btn-primary btn-txt btn-block account-btn ">{{ __("langue.CST_DECONNEXION") }}</a> -->
         </div>
 
         <header class="position-absolute top-0" style="background-color: transparent !important; width: 0px;">
